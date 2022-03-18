@@ -1,6 +1,7 @@
 package com.ilham.crudapi.controllers;
 
 import com.ilham.crudapi.entities.CarEntity;
+import com.ilham.crudapi.entities.CarImage;
 import com.ilham.crudapi.repositories.CarRepository;
 import com.ilham.crudapi.response.CommonResponse;
 import com.ilham.crudapi.response.CommonResponseGenerator;
@@ -52,6 +53,11 @@ public class CarController {
         carRepository.deleteById(id);
         List<CarEntity> carList = carRepository.findAll();
         return commonResponseGenerator.successResponse(carList, "Success delete car id: "+id);
+    }
+
+    @PostMapping(value = "uploadcar")
+    public CommonResponse<CarImage> upload(){
+        return null;
     }
 }
 
